@@ -47,13 +47,11 @@ public class MainActivity extends AppCompatActivity {
     private Bitmap currentBitmap;
 
 
+
+
     static {
         OpenCVLoader.initDebug();
     }
-
-
-
-
 
 
     @Override
@@ -179,6 +177,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[],  int[] grantResults) {
+        if (requestCode == REQUEST_READ_EXTERNAL_STORAGE) {
+            // If request is cancelled, the result arrays are empty.
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // permission was granted
+                Log.i("permission", "READ_EXTERNAL_STORAGE granted");
+                read_external_storage_granted = true;
+            } else {
+                // permission denied
+                Log.i("permission", "READ_EXTERNAL_STORAGE denied");
+            }
+        }
+    }
+
     public static Bitmap rotateBitmap(Bitmap bitmap, int orientation) {
 
         Matrix matrix = new Matrix();
@@ -223,6 +236,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
+    //Difference of Gaussian
     public void DifferenceOfGaussian() {
         Mat grayMat = new Mat();
         Mat blur1 = new Mat();
@@ -246,6 +263,7 @@ public class MainActivity extends AppCompatActivity {
         Utils.matToBitmap(DoG, currentBitmap);
         imageView.setImageBitmap(currentBitmap);
     }
+
 
 
 }
