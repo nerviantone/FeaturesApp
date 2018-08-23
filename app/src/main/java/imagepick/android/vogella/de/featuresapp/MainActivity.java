@@ -20,8 +20,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import org.opencv.android.BaseLoaderCallback;
-import org.opencv.android.LoaderCallbackInterface;
+
 import org.opencv.android.OpenCVLoader;
 import org.opencv.android.Utils;
 import org.opencv.core.Core;
@@ -104,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+                //noinspection SimplifiableIfStatement
         if (id == R.id.open_gallery) {
             if(read_external_storage_granted) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
