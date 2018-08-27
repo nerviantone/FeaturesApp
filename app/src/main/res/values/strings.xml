@@ -4,5 +4,15 @@
     <string name="OpenGallery">OpenGallery</string>
     <string name="settings">Settings</string>
     <string name="DoG">DoG</string>
+    <string name="CannyEdges">CannyEdges</string>
+
+    <string name="SobelFilter">SobelFilter</string>
+
+    <string name="HarrisCorners">HarrisCorner</string>
+    <string name="HoughLines">HoughLines</string>
+    <string name="HoughCircles">HoughCircles</string>
+    <string name="Contours">Contours</string>
+
+
 
 </resources>
